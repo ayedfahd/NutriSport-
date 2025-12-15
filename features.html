@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features - NutriSport+</title>
+    <link rel="stylesheet" href="styleproj.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-atom"></i>
+                <span>NutriSport+</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="indexproj.html" class="nav-link">Home</a></li>
+                <li><a href="features.html" class="nav-link active">Features</a></li>
+                <li><a href="#" class="nav-link login-btn">Login</a></li>
+                <li><a href="#" class="nav-link signup-btn">Sign Up</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Features Header -->
+    <section class="page-header" style="
+        min-height: 300px;
+        display: flex;
+        align-items: center;
+        background: var(--surface);
+        padding-top: 100px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    ">
+        <div class="container">
+            <h1 style="
+                font-size: 3rem;
+                margin-bottom: 20px;
+                background: var(--gradient-text);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                text-shadow: 0 0 30px rgba(0, 245, 255, 0.3);
+            ">Revolutionary Features</h1>
+            <p style="
+                font-size: 1.2rem;
+                color: var(--text-secondary);
+                max-width: 600px;
+                margin: 0 auto;
+            ">Discover how our AI-powered platform transforms your fitness journey</p>
+        </div>
+    </section>
+
+    <!-- Main Features Section -->
+    <section class="features-detailed" style="
+        padding: 80px 0;
+        background: var(--background);
+    ">
+        <div class="container">
+            <div class="feature-detail" style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 60px;
+                align-items: center;
+                background: var(--surface);
+                padding: 50px;
+                border-radius: 20px;
+                border: 1px solid var(--surface-light);
+                box-shadow: var(--glow);
+                margin-bottom: 50px;
+            ">
+                <div class="feature-info">
+                    <h2 style="
+                        font-size: 2.5rem;
+                        margin-bottom: 20px;
+                        color: var(--primary);
+                    ">Sport Suitability Analysis</h2>
+                    <p style="
+                        color: var(--text-secondary);
+                        margin-bottom: 30px;
+                        font-size: 1.1rem;
+                    ">Discover your ideal sports with AI-powered analysis based on your physical attributes.</p>
+                    <ul class="feature-benefits" style="
+                        list-style: none;
+                        margin-bottom: 40px;
+                    ">
+                        <li style="
+                            margin-bottom: 15px;
+                            display: flex;
+                            align-items: center;
+                            gap: 10px;
+                        "><i class="fas fa-check-circle" style="color: var(--success);"></i> Sport Match Scoring</li>
+                        <li style="
+                            margin-bottom: 15px;
+                            display: flex;
+                            align-items: center;
+                            gap: 10px;
+                        "><i class="fas fa-check-circle" style="color: var(--success);"></i> Multi-sport Comparisons</li>
+                        <li style="
+                            margin-bottom: 15px;
+                            display: flex;
+                            align-items: center;
+                            gap: 10px;
+                        "><i class="fas fa-check-circle" style="color: var(--success);"></i> Personalized Tips</li>
+                        <li style="
+                            margin-bottom: 15px;
+                            display: flex;
+                            align-items: center;
+                            gap: 10px;
+                        "><i class="fas fa-check-circle" style="color: var(--success);"></i> Progress Tracking</li>
+                    </ul>
+                    <button class="btn-primary" onclick="openSuitabilityForm()" style="
+                        background: var(--gradient);
+                        color: var(--background);
+                        border: none;
+                        padding: 15px 30px;
+                        border-radius: 30px;
+                        font-size: 1rem;
+                        font-weight: 600;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        box-shadow: var(--glow);
+                    ">Take Suitability Test</button>
+                </div>
+
+                <div class="feature-visual">
+                    <div class="feature-image" style="
+                        width: 300px;
+                        height: 300px;
+                        background: var(--gradient);
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin: 0 auto;
+                        box-shadow: var(--glow);
+                    ">
+                        <i class="fas fa-running" style="
+                            font-size: 6rem;
+                            color: var(--background);
+                        "></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- All Features Grid -->
+    <section class="all-features" style="
+        padding: 80px 0;
+        background: var(--surface);
+    ">
+        <div class="container">
+            <h2 class="section-title" style="
+                text-align: center;
+                font-size: 2.5rem;
+                margin-bottom: 60px;
+                background: var(--gradient-text);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            ">All Platform Features</h2>
+            <div class="features-grid expanded" style="
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 30px;
+            ">
+
+                <div class="feature-card" style="
+                    background: var(--background);
+                    padding: 40px 30px;
+                    border-radius: 20px;
+                    text-align: center;
+                    border: 1px solid var(--surface-light);
+                    transition: all 0.3s ease;
+                ">
+                    <div class="feature-icon" style="
+                        width: 80px;
+                        height: 80px;
+                        background: var(--gradient);
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin: 0 auto 20px;
+                    "><i class="fas fa-heartbeat" style="font-size: 2rem; color: var(--background);"></i></div>
+                    <h3 style="
+                        font-size: 1.5rem;
+                        margin-bottom: 15px;
+                        color: var(--text);
+                    ">Health Monitoring</h3>
+                    <p style="
+                        color: var(--text-secondary);
+                    ">Track vital signs, sleep patterns, and recovery metrics.</p>
+                </div>
+
+                <div class="feature-card" style="
+                    background: var(--background);
+                    padding: 40px 30px;
+                    border-radius: 20px;
+                    text-align: center;
+                    border: 1px solid var(--surface-light);
+                    transition: all 0.3s ease;
+                ">
+                    <div class="feature-icon" style="
+                        width: 80px;
+                        height: 80px;
+                        background: var(--gradient);
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin: 0 auto 20px;
+                    "><i class="fas fa-dumbbell" style="font-size: 2rem; color: var(--background);"></i></div>
+                    <h3 style="
+                        font-size: 1.5rem;
+                        margin-bottom: 15px;
+                        color: var(--text);
+                    ">Workout Library</h3>
+                    <p style="
+                        color: var(--text-secondary);
+                    ">Access thousands of exercises with guidance.</p>
+                </div>
+
+                <div class="feature-card" style="
+                    background: var(--background);
+                    padding: 40px 30px;
+                    border-radius: 20px;
+                    text-align: center;
+                    border: 1px solid var(--surface-light);
+                    transition: all 0.3s ease;
+                ">
+                    <div class="feature-icon" style="
+                        width: 80px;
+                        height: 80px;
+                        background: var(--gradient);
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin: 0 auto 20px;
+                    "><i class="fas fa-chart-line" style="font-size: 2rem; color: var(--background);"></i></div>
+                    <h3 style="
+                        font-size: 1.5rem;
+                        margin-bottom: 15px;
+                        color: var(--text);
+                    ">Progress Analytics</h3>
+                    <p style="
+                        color: var(--text-secondary);
+                    ">Comprehensive tracking and performance trends.</p>
+                </div>
+
+                <div class="feature-card" style="
+                    background: var(--background);
+                    padding: 40px 30px;
+                    border-radius: 20px;
+                    text-align: center;
+                    border: 1px solid var(--surface-light);
+                    transition: all 0.3s ease;
+                ">
+                    <div class="feature-icon" style="
+                        width: 80px;
+                        height: 80px;
+                        background: var(--gradient);
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin: 0 auto 20px;
+                    "><i class="fas fa-calendar-alt" style="font-size: 2rem; color: var(--background);"></i></div>
+                    <h3 style="
+                        font-size: 1.5rem;
+                        margin-bottom: 15px;
+                        color: var(--text);
+                    ">Training Calendar</h3>
+                    <p style="
+                        color: var(--text-secondary);
+                    ">Plan and schedule your workouts easily.</p>
+                </div>
+
+                <div class="feature-card" style="
+                    background: var(--background);
+                    padding: 40px 30px;
+                    border-radius: 20px;
+                    text-align: center;
+                    border: 1px solid var(--surface-light);
+                    transition: all 0.3s ease;
+                ">
+                    <div class="feature-icon" style="
+                        width: 80px;
+                        height: 80px;
+                        background: var(--gradient);
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin: 0 auto 20px;
+                    "><i class="fas fa-trophy" style="font-size: 2rem; color: var(--background);"></i></div>
+                    <h3 style="
+                        font-size: 1.5rem;
+                        margin-bottom: 15px;
+                        color: var(--text);
+                    ">Achievement System</h3>
+                    <p style="
+                        color: var(--text-secondary);
+                    ">Earn badges and rewards for milestones.</p>
+                </div>
+
+                <div class="feature-card" style="
+                    background: var(--background);
+                    padding: 40px 30px;
+                    border-radius: 20px;
+                    text-align: center;
+                    border: 1px solid var(--surface-light);
+                    transition: all 0.3s ease;
+                ">
+                    <div class="feature-icon" style="
+                        width: 80px;
+                        height: 80px;
+                        background: var(--gradient);
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin: 0 auto 20px;
+                    "><i class="fas fa-mobile-alt" style="font-size: 2rem; color: var(--background);"></i></div>
+                    <h3 style="
+                        font-size: 1.5rem;
+                        margin-bottom: 15px;
+                        color: var(--text);
+                    ">Mobile App</h3>
+                    <p style="
+                        color: var(--text-secondary);
+                    ">Full access on iOS and Android.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" style="
+        padding: 80px 0;
+        background: var(--background);
+        text-align: center;
+    ">
+        <div class="container">
+            <h2 style="
+                font-size: 2.5rem;
+                margin-bottom: 20px;
+                color: var(--text);
+            ">Ready to Transform Your Fitness Journey?</h2>
+            <p style="
+                color: var(--text-secondary);
+                margin-bottom: 40px;
+                font-size: 1.1rem;
+            ">Join millions of users who have achieved their fitness goals with NutriSport+</p>
+
+            <!-- FREE TRIAL FORM (FORM #2) -->
+            <form id="trialForm" class="cta-form" style="
+                max-width: 500px;
+                margin: 0 auto 40px;
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            ">
+                <input type="text" id="trialName" placeholder="Full Name" required style="
+                    padding: 15px 20px;
+                    background: var(--surface);
+                    border: 1px solid var(--surface-light);
+                    border-radius: 10px;
+                    color: var(--text);
+                    font-size: 1rem;
+                ">
+                <input type="email" id="trialEmail" placeholder="Email Address" required style="
+                    padding: 15px 20px;
+                    background: var(--surface);
+                    border: 1px solid var(--surface-light);
+                    border-radius: 10px;
+                    color: var(--text);
+                    font-size: 1rem;
+                ">
+                <input type="tel" id="trialPhone" placeholder="Phone Number (8 digits)" required style="
+                    padding: 15px 20px;
+                    background: var(--surface);
+                    border: 1px solid var(--surface-light);
+                    border-radius: 10px;
+                    color: var(--text);
+                    font-size: 1rem;
+                ">
+                <button type="button" class="btn-primary" onclick="validateTrialForm()" style="
+                    background: var(--gradient);
+                    color: var(--background);
+                    border: none;
+                    padding: 15px 30px;
+                    border-radius: 30px;
+                    font-size: 1rem;
+                    font-weight: 600;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    box-shadow: var(--glow);
+                    margin-top: 10px;
+                ">Start Free Trial</button>
+            </form>
+
+            <a href="indexproj.html" class="btn-secondary" style="
+                display: inline-block;
+                background: transparent;
+                color: var(--text);
+                border: 1px solid var(--surface-light);
+                padding: 12px 25px;
+                border-radius: 30px;
+                text-decoration: none;
+                font-weight: 600;
+                transition: all 0.3s ease;
+            ">Back to Home</a>
+        </div>
+    </section>
+
+    <!-- POPUP SPORT SUITABILITY FORM (FORM #1) -->
+    <div id="suitabilityPopup" class="popup" style="
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(5px);
+        z-index: 2000;
+        align-items: center;
+        justify-content: center;
+    ">
+        <div class="popup-content" style="
+            background: var(--surface);
+            padding: 40px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 500px;
+            border: 1px solid var(--surface-light);
+            box-shadow: var(--glow);
+            position: relative;
+        ">
+            <span class="close" onclick="closeSuitabilityForm()" style="
+                position: absolute;
+                top: 20px;
+                right: 25px;
+                font-size: 2rem;
+                cursor: pointer;
+                color: var(--text-secondary);
+            ">&times;</span>
+            <h2 style="
+                margin-bottom: 30px;
+                color: var(--primary);
+                text-align: center;
+            ">Sport Suitability Analysis</h2>
+
+            <form id="sportForm" style="
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            ">
+                <input type="text" id="sportName" placeholder="Full Name" required style="
+                    padding: 15px 20px;
+                    background: var(--background);
+                    border: 1px solid var(--surface-light);
+                    border-radius: 10px;
+                    color: var(--text);
+                    font-size: 1rem;
+                ">
+                <input type="number" id="sportAge" placeholder="Age (10-80)" min="10" max="80" required style="
+                    padding: 15px 20px;
+                    background: var(--background);
+                    border: 1px solid var(--surface-light);
+                    border-radius: 10px;
+                    color: var(--text);
+                    font-size: 1rem;
+                ">
+                <input type="number" id="sportHeight" placeholder="Height (cm)" min="100" max="250" required style="
+                    padding: 15px 20px;
+                    background: var(--background);
+                    border: 1px solid var(--surface-light);
+                    border-radius: 10px;
+                    color: var(--text);
+                    font-size: 1rem;
+                ">
+                <input type="number" id="sportWeight" placeholder="Weight (kg)" min="30" max="200" required style="
+                    padding: 15px 20px;
+                    background: var(--background);
+                    border: 1px solid var(--surface-light);
+                    border-radius: 10px;
+                    color: var(--text);
+                    font-size: 1rem;
+                ">
+
+                <select id="sportGoal" required style="
+                    padding: 15px 20px;
+                    background: var(--background);
+                    border: 1px solid var(--surface-light);
+                    border-radius: 10px;
+                    color: var(--text);
+                    font-size: 1rem;
+                ">
+                    <option value="">-- Select Goal --</option>
+                    <option value="Lose Weight">Lose Weight</option>
+                    <option value="Build Muscle">Build Muscle</option>
+                    <option value="Increase Stamina">Increase Stamina</option>
+                    <option value="Improve Mobility">Improve Mobility</option>
+                </select>
+
+                <button type="button" class="btn-primary" onclick="validateSportForm()" style="
+                    background: var(--gradient);
+                    color: var(--background);
+                    border: none;
+                    padding: 15px 30px;
+                    border-radius: 30px;
+                    font-size: 1rem;
+                    font-weight: 600;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    box-shadow: var(--glow);
+                    margin-top: 10px;
+                ">Analyze</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- NutriSport+ AI Chatbot -->
+    <div class="chatbot-container">
+        <!-- Chatbot Toggle Button -->
+        <button class="chatbot-toggle" id="chatbotToggle">
+            <i class="fas fa-robot"></i>
+            <span class="toggle-text">NutriSport AI</span>
+        </button>
+
+        <!-- Chatbot Window -->
+        <div class="chatbot-window" id="chatbotWindow">
+            <!-- Chatbot Header -->
+            <div class="chatbot-header">
+                <div class="chatbot-title">
+                    <i class="fas fa-robot"></i>
+                    <h3>NutriSport AI Assistant</h3>
+                    <span class="ai-badge">AI</span>
+                </div>
+                <button class="chatbot-close" id="chatbotClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <!-- Chat Messages Container -->
+            <div class="chatbot-messages" id="chatbotMessages">
+                <!-- Welcome message -->
+                <div class="message bot-message">
+                    <div class="message-content">
+                        <div class="message-sender">
+                            <i class="fas fa-robot"></i>
+                            <span>NutriSport AI</span>
+                            <span class="ai-tag">AI</span>
+                        </div>
+                        <p>Hello! I'm your NutriSport+ AI assistant. I can help you with sport suitability analysis, workout plans, nutrition tips, and answer any questions about our features!</p>
+                        <div class="message-time">Just now</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Input Area -->
+            <div class="chatbot-input">
+                <input 
+                    type="text" 
+                    id="chatbotInput" 
+                    placeholder="Ask me about workouts, nutrition, or features..."
+                    maxlength="500"
+                >
+                <button id="chatbotSend">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+
+            <!-- Quick Suggestions -->
+            <div class="chatbot-suggestions">
+                <button class="suggestion-btn" data-question="What sports suit me?">
+                    Sport Suitability
+                </button>
+                <button class="suggestion-btn" data-question="What features do you offer?">
+                    Platform Features
+                </button>
+                <button class="suggestion-btn" data-question="How do I start?">
+                    Getting Started
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" style="
+        background: var(--surface);
+        padding: 60px 0 20px;
+        border-top: 1px solid var(--surface-light);
+        text-align: center;
+    ">
+        <div class="container">
+            <p style="
+                color: var(--text-secondary);
+            ">&copy; 2024 NutriSport+. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

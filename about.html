@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - NutriSport+</title>
+    <link rel="stylesheet" href="styleproj.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Additional styles specific to the About page - DARK THEME */
+        .about-hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            margin-top: 70px;
+            background: radial-gradient(ellipse at top, var(--surface) 0%, var(--background) 70%);
+            border-bottom: 1px solid var(--surface-light);
+        }
+
+        .about-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .about-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            color: var(--text-secondary);
+        }
+
+        .page-section {
+            padding: 80px 0;
+            background: var(--background);
+        }
+
+        .page-section:nth-child(even) {
+            background: var(--surface);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .section-title p {
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--gradient);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        /* About Us Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+            color: var(--text);
+        }
+
+        .mission-vision {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .mission-card, .vision-card {
+            background: var(--background);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: var(--glow);
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid var(--surface-light);
+        }
+
+        .mission-card:hover, .vision-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--glow-secondary);
+        }
+
+        .mission-card i, .vision-card i {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .mission-card h3, .vision-card h3 {
+            color: var(--text);
+            margin-bottom: 15px;
+        }
+
+        .mission-card p, .vision-card p {
+            color: var(--text-secondary);
+        }
+
+        /* Careers Section */
+        .job-openings {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .job-card {
+            background: var(--background);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: var(--glow);
+            border-left: 5px solid var(--primary);
+            transition: all 0.3s ease;
+            border: 1px solid var(--surface-light);
+        }
+
+        .job-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--glow-secondary);
+        }
+
+        .job-card h4 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--text);
+        }
+
+        .job-meta {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .job-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .job-meta i {
+            color: var(--primary);
+        }
+
+        .job-card p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .apply-btn {
+            display: inline-block;
+            background: var(--gradient);
+            color: var(--background);
+            padding: 10px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            box-shadow: var(--glow);
+        }
+
+        .apply-btn:hover {
+            background: transparent;
+            color: var(--primary);
+            border-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            margin-top: 40px;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: var(--primary);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+
+        .contact-item i {
+            background: var(--gradient);
+            color: var(--background);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+            box-shadow: var(--glow);
+        }
+
+        .contact-details h4 {
+            margin-bottom: 5px;
+            color: var(--text);
+        }
+
+        .contact-details p {
+            color: var(--text-secondary);
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            background: var(--background);
+            border: 1px solid var(--surface-light);
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border 0.3s ease;
+            color: var(--text);
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: var(--glow);
+        }
+
+        .contact-form button {
+            background: var(--gradient);
+            color: var(--background);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            box-shadow: var(--glow);
+        }
+
+        .contact-form button:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--glow-secondary);
+        }
+
+        /* Privacy Policy Section */
+        .privacy-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .privacy-section {
+            margin-bottom: 40px;
+            background: var(--background);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid var(--surface-light);
+        }
+
+        .privacy-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--surface-light);
+        }
+
+        .privacy-section ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .privacy-section li {
+            margin-bottom: 10px;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+
+        .privacy-section p {
+            color: var(--text-secondary);
+        }
+
+        .update-date {
+            text-align: center;
+            font-style: italic;
+            color: var(--text-secondary);
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid var(--surface-light);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-hero {
+                padding: 100px 0 60px;
+            }
+            
+            .about-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .page-section {
+                padding: 60px 0;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .job-openings {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .about-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.6rem;
+            }
+            
+            .mission-vision {
+                grid-template-columns: 1fr;
+            }
+            
+            .job-meta {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+        
+        /* Ensure all text is readable in dark theme */
+        .page-section h3,
+        .page-section h4,
+        .page-section h5 {
+            color: var(--text);
+        }
+        
+        .page-section p:not(.section-title p) {
+            color: var(--text-secondary);
+        }
+        
+        /* Fix for any remaining white backgrounds */
+        .hero-buttons .btn-primary,
+        .hero-buttons .btn-secondary {
+            border: 2px solid transparent;
+        }
+        
+        .hero-buttons .btn-primary {
+            background: var(--gradient);
+            color: var(--background);
+        }
+        
+        .hero-buttons .btn-secondary {
+            background: transparent;
+            color: var(--text);
+            border-color: var(--surface-light);
+        }
+        
+        .hero-buttons .btn-secondary:hover {
+            border-color: var(--primary);
+        }
+        
+        /* About page image placeholder */
+        .about-image {
+            background: var(--surface);
+            border-radius: 15px;
+            padding: 40px;
+            border: 1px solid var(--surface-light);
+            box-shadow: var(--glow);
+        }
+        
+        .about-image div {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-atom"></i>
+                <span>NutriSport+</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="indexproj.html" class="nav-link">Home</a></li>
+                <li><a href="features.html" class="nav-link">Features</a></li>
+                <li><a href="about.html" class="nav-link active">About</a></li>
+                <li><a href="#" class="nav-link login-btn">Login</a></li>
+                <li><a href="#" class="nav-link signup-btn">Sign Up</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+    <section class="about-hero">
+        <div class="container">
+            <h1>About NutriSport+</h1>
+            <p>Revolutionizing athletic performance through AI-powered optimization of nutrition, training, and recovery analytics.</p>
+            <div class="hero-buttons">
+                <a href="#careers" class="btn-primary">
+                    <i class="fas fa-briefcase"></i>
+                    Join Our Team
+                </a>
+                <a href="#contact" class="btn-secondary">
+                    <i class="fas fa-envelope"></i>
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </section>
+    <section id="about-us" class="page-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Us</h2>
+                <p>Discover the story behind NutriSport+ and our mission to transform athletic performance</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Fueling Potential Through Science</h3>
+                    <p>Founded in 2020, NutriSport+ emerged from a simple yet powerful idea: what if we could combine cutting-edge sports science, artificial intelligence, and personalized analytics to help every athlete reach their peak potential?</p>
+                    <p>Our team of sports scientists, nutritionists, data analysts, and elite coaches work together to develop algorithms that adapt to your unique physiology, training regimen, and performance goals. We believe that every athlete deserves access to the same advanced tools previously available only to professional sports teams.</p>
+                    <p>At NutriSport+, we're driven by our mission to democratize elite sports science and help athletes at every level <strong>Train Like Science Intended</strong>.</p>
+                </div>
+                <div class="about-image">
+                    <div>
+                        <i class="fas fa-brain" style="font-size: 4rem; margin-bottom: 20px;"></i>
+                        <h3>AI-Powered Performance Optimization</h3>
+                        <p>Combining machine learning with sports science for personalized training plans</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mission-vision">
+                <div class="mission-card">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Our Mission</h3>
+                    <p>To empower athletes of all levels with AI-driven insights that optimize nutrition, training, and recovery, making elite performance accessible to everyone.</p>
+                </div>
+                <div class="vision-card">
+                    <i class="fas fa-eye"></i>
+                    <h3>Our Vision</h3>
+                    <p>A world where every athlete can achieve their full potential through personalized, science-based training and nutrition guidance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="careers" class="page-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Careers</h2>
+                <p>Join our team and help revolutionize athletic performance through science and technology</p>
+            </div>
+            
+            <div class="job-openings">
+                <div class="job-card">
+                    <h4>AI/ML Engineer</h4>
+                    <div class="job-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Remote / San Francisco</span>
+                        <span><i class="fas fa-clock"></i> Full-time</span>
+                    </div>
+                    <p>Develop and optimize machine learning models for performance prediction and personalized recommendation systems.</p>
+                    <a href="#" class="apply-btn">Apply Now</a>
+                </div>
+                
+                <div class="job-card">
+                    <h4>Sports Nutritionist</h4>
+                    <div class="job-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> New York / Remote</span>
+                        <span><i class="fas fa-clock"></i> Full-time</span>
+                    </div>
+                    <p>Create personalized nutrition plans and contribute to our nutrition knowledge base and algorithm development.</p>
+                    <a href="#" class="apply-btn">Apply Now</a>
+                </div>
+                
+                <div class="job-card">
+                    <h4>Frontend Developer</h4>
+                    <div class="job-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Remote</span>
+                        <span><i class="fas fa-clock"></i> Full-time</span>
+                    </div>
+                    <p>Build intuitive, responsive user interfaces for our web and mobile applications using modern frameworks.</p>
+                    <a href="#" class="apply-btn">Apply Now</a>
+                </div>
+                
+                <div class="job-card">
+                    <h4>Data Scientist</h4>
+                    <div class="job-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Boston / Remote</span>
+                        <span><i class="fas fa-clock"></i> Full-time</span>
+                    </div>
+                    <p>Analyze fitness and nutrition data to derive insights and improve our AI algorithms.</p>
+                    <a href="#" class="apply-btn">Apply Now</a>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <p style="color: var(--text-secondary);">Don't see a position that matches your skills? We're always looking for talented people!</p>
+                <a href="mailto:careers@nutrisportplus.com" class="btn-primary" style="margin-top: 20px; display: inline-flex; align-items: center; gap: 10px;">
+                    <i class="fas fa-paper-plane"></i>
+                    Send Us Your Resume
+                </a>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="page-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Get in touch with our team for questions, support, or partnership opportunities</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="contact-details">
+                            <h4>Our Headquarters</h4>
+                            <p>50 Ave Habib Bourguiba<br> Tunis 1001</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div class="contact-details">
+                            <h4>Phone Number</h4>
+                            <p>+21655222888</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="contact-details">
+                            <h4>Email Address</h4>
+                            <p>info@nutrisportplus.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div class="contact-details">
+                            <h4>Business Hours</h4>
+                            <p>Monday - Friday: 9am - 6pm </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <input type="text" placeholder="Subject" required>
+                        <textarea placeholder="Your Message" rows="6" required></textarea>
+                        <button type="submit">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="privacy" class="page-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Privacy Policy</h2>
+                <p>How we collect, use, and protect your personal information</p>
+            </div>
+            
+            <div class="privacy-content">
+                <div class="privacy-section">
+                    <h3>Information We Collect</h3>
+                    <p>We collect information you provide directly to us, such as when you create an account, complete your profile, or use our services. This may include:</p>
+                    <ul>
+                        <li>Personal identification information (name, email address, date of birth)</li>
+                        <li>Health and fitness data (height, weight, body metrics, training logs)</li>
+                        <li>Nutrition information (dietary preferences, food logs, supplement use)</li>
+                        <li>Device and usage information (IP address, browser type, app usage data)</li>
+                    </ul>
+                </div>
+                
+                <div class="privacy-section">
+                    <h3>How We Use Your Information</h3>
+                    <p>We use the information we collect to:</p>
+                    <ul>
+                        <li>Provide, maintain, and improve our services</li>
+                        <li>Develop personalized training and nutrition plans</li>
+                        <li>Process your transactions and send related information</li>
+                        <li>Send technical notices, updates, security alerts, and support messages</li>
+                        <li>Respond to your comments, questions, and requests</li>
+                    </ul>
+                </div>
+                
+                <div class="privacy-section">
+                    <h3>Data Security</h3>
+                    <p>We implement appropriate technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. All health and fitness data is encrypted both in transit and at rest.</p>
+                </div>
+                
+                <div class="privacy-section">
+                    <h3>Your Rights</h3>
+                    <p>You have the right to access, correct, or delete your personal information. You can also object to or restrict certain processing of your data. To exercise these rights, please contact us at privacy@nutrisportplus.com.</p>
+                </div>
+                
+                <div class="update-date">
+                    <p>Last updated: June 15, 2024</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>NutriSport+</h4>
+                    <p>Fuel your potential. Train like science intended.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h5>Features</h5>
+                    <ul>
+                        <li><a href="features.html">All Features</a></li>
+                        <li><a href="features.html">Sport Suitability</a></li>
+                        <li><a href="features.html">AI Analytics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h5>Company</h5>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h5>Subscribe</h5>
+                    <p>Get the latest updates and fitness tips</p>
+                    <div class="subscribe-form">
+                        <input type="email" placeholder="Enter your email">
+                        <button class="btn-primary">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 NutriSport+. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
